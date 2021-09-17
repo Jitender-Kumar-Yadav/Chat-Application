@@ -28,7 +28,7 @@ def sendReqAccept(reg_req, conn_socket, addr):
     while True:
         try:
             request = str(conn_socket.recv(4096), 'utf-8').split("\n")
-            if len(request) < 4 or len(request[0].split(" ")) < 2 or len(request[1].split(" ")) < 2:
+            if len(request) < 4 or len(request[0].split(" ")) < 2 or len(request[1].split(" ")) < 2 or not len(request[3]) == int(request[1].split(" ")[1]):
                 conn_socket.send(bytes("ERROR 103 Header incomplete\n\n", 'utf-8'))
             else:
                 send_to = request[0].split(" ")[1]
