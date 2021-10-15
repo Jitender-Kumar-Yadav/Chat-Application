@@ -75,7 +75,7 @@ while not (host_check and user_check):
         recv_response = (recv_response.strip().split("\n")[0]).split(" ")
         
         if recv_response[0] == "ERROR" and recv_response[1] == "100":
-            username = input("User Name already used.\n\nEnter a valid username.\n")
+            username = input("User Name invalid or already used.\n\nEnter a valid username.\n")
             user_check = False
             send_sock.close()
             recv_sock.close()

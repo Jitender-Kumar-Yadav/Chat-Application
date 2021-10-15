@@ -82,14 +82,3 @@ while True:
         thr = threading.Thread(target = recvReqAccept, args = (reg_req, req, addr))
         threads.append(thr)
         thr.start()
-
-        
-
-
-
-
-
-
-
-
-
